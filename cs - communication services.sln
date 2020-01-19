@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cs - CrossCutting", "cs - C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cs - Tests", "cs - Tests\cs - Tests.csproj", "{8F5840B9-207B-47ED-92E8-1FA5BE3BDF56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc6", "Mvc6\Mvc6.csproj", "{71DC714E-DEF9-4F4A-9185-F92B154E1CB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc6", "Mvc6\Mvc6.csproj", "{71DC714E-DEF9-4F4A-9185-F92B154E1CB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
