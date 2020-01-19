@@ -30,5 +30,10 @@ namespace csTests
 
 			Assert.NotEqual(messageTO.Message, message.Message);
 		}
+		[Fact]
+		public void MessageEF_To_TO()
+		{
+
+		}
 	}
 }
