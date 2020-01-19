@@ -35,5 +35,11 @@ namespace csTests
 		{
 
 		}
+
+		[Fact]
+		public void MessageTO_To_EF()
+		{
+
+		}
 	}
 }
