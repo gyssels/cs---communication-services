@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>240</x>
+      <y>672</y>
+      <w>792</w>
+      <h>648</h>
+    </coordinates>
+    <panel_attributes>Business Logic Layer
+--
+bg=gray
+transparency=0
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>252</x>
+      <y>708</y>
+      <w>456</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>Use Cases
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>216</x>
+      <y>0</y>
+      <w>1584</w>
+      <h>2400</h>
+    </coordinates>
+    <panel_attributes>CommunicationServices
+--
+bg=#E1E6FA
+transparency=0
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>252</x>
+      <y>996</y>
+      <w>768</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Domain
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>1044</y>
+      <w>336</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;private&gt;&gt;
+ClassMessage
+--
+Message : StructMessage
+--
+ClassMessage(message : StructMessage)
+IsValid()
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>732</x>
+      <y>708</y>
+      <w>288</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>Extension
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>744</y>
+      <w>264</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>ClassMessageExtension
+--
+ToTO() : ClassMessageTO
+ToDomain() : ClasseMessage
+ReceiverIsLogged() : bool
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>864</y>
+      <w>168</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Helper
+--
+SaveMessage()
+SendMessage()
+SendMail()
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>240</x>
+      <y>1344</y>
+      <w>792</w>
+      <h>1032</h>
+    </coordinates>
+    <panel_attributes>Data Access Layer
+--
+bg=gray
+transparency=0
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>696</x>
+      <y>1404</y>
+      <w>288</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>Entities
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>696</x>
+      <y>1704</y>
+      <w>288</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Extension
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>264</x>
+      <y>1884</y>
+      <w>612</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>Unit Of Work
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>708</x>
+      <y>1440</y>
+      <w>264</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;private struct&gt;&gt;
+MessageEF
+--
+IdMessage : int
+IdSender : int
+IdReceiver : int
+MessageType : MessageType
+Title : string
+Email : string
+Date : DateTime
+IsSent : bool
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>708</x>
+      <y>1740</y>
+      <w>264</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>ClassMessageEFExtension
+--
+ToTO() : ClassMessageTO
+ToEF() : MessageEF
+ReceiverIsLogged() : bool
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>276</x>
+      <y>1932</y>
+      <w>564</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>CSContext : DbContext
+--
+Message : DbSet&lt;ClassMessageEF&gt;
+--
+CSContext(NameOrConnectionString) : base(NameOrConnectionString)
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>276</x>
+      <y>2052</y>
+      <w>444</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Repository : IRepository&lt;MessageEF&gt;
+--
+GetHistory(ByID) : List&lt;IdReceiver&gt;
+Write(ClassMessageEF Entity)
+Read(IdSender, IdReceiver) : List&lt;MessageEF&gt;
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1200</x>
+      <y>48</y>
+      <w>576</w>
+      <h>1908</h>
+    </coordinates>
+    <panel_attributes>Cross Cutting
+--
+bg=gray
+transparency=0
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2040</x>
+      <y>48</y>
+      <w>552</w>
+      <h>1908</h>
+    </coordinates>
+    <panel_attributes>Common
+--
+bg=gray
+transparency=0
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1236</x>
+      <y>144</y>
+      <w>264</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Internal struct&gt;&gt; 
+MessageTO
+--
++Message : StructMessage
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2064</x>
+      <y>96</y>
+      <w>504</w>
+      <h>576</h>
+    </coordinates>
+    <panel_attributes>CommunicationServices
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2076</x>
+      <y>144</y>
+      <w>480</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;public&gt;&gt;
+Message
+--
+-IdMessage : int
+-IdSender : int
++IdReceiver : int
++MessageType : MessageType
++Title : string
++Email : string
++Date : DateTime
++Content : string
+-IsSent : bool
+--
++Message(IdSender) 
++GetHistory(IdSender) : list&lt;IdReceiver&gt;
++GetDiscussion(IdSender, IdReceiver) : List&lt;Message&gt;
++SendMessage(IdReceiver, Content) : bool
++SendMessage(List&lt;IdReceiver&gt;, Content) : List&lt;IdReceiver&gt;
++SendEmail(EmailReceiver, Content) : bool
+
+
+bg=#C4D7ED
+transparency=0
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>876</x>
+      <y>1044</y>
+      <w>132</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+MessageType
+--
+Email = 0
+Notification = 1
+Chat = 2
+
+bg=#C4D7ED
+transparency=0
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>744</y>
+      <w>432</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>UserInterfaceRole
+--
+GetHistory(Sender) : list&lt;receiver&gt;
+GetDiscussion(sender, receiver) : List&lt;messageTO&gt;
+SentMessage(messageTO)
+SentMessage(messageTO, List&lt;receiver&gt;)
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2016</x>
+      <y>0</y>
+      <w>600</w>
+      <h>1980</h>
+    </coordinates>
+    <panel_attributes>OnLineServices
+--
+bg=#E1E6FA
+transparency=0
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>900</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>936</y>
+      <w>204</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>996</y>
+      <w>204</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1788</x>
+      <y>924</y>
+      <w>252</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+layer=2</panel_attributes>
+    <additional_attributes>10.0;11.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1788</x>
+      <y>984</y>
+      <w>252</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+layer=2</panel_attributes>
+    <additional_attributes>10.0;11.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>1596</y>
+      <w>204</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>1656</y>
+      <w>204</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+layer=2</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>240</x>
+      <y>48</y>
+      <w>792</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>User Interface Layer
+--
+bg=gray
+transparency=0
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1224</x>
+      <y>432</y>
+      <w>528</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>OnLine Service Interface
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1236</x>
+      <y>468</y>
+      <w>504</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;public&gt;&gt;
+CSMessage
+--
++GetHistory(IdSender) : list&lt;IdReceiver&gt;
++GetDiscussion(IdSender, IdReceiver) : List&lt;MessageTO&gt;
++SendMessag(MessageTO) : bool
++ToTO() : MessageTO
++ToMessage() : Message
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>276</x>
+      <y>1440</y>
+      <w>300</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>IRepository&lt;T&gt;
+--
+GetHistory(ByID) : List&lt;IdReceiver&gt;
+Write(T Entity)
+Read(IdSender, IdReceiver) : List&lt;T&gt;
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>264</x>
+      <y>1404</y>
+      <w>384</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>Interface
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>276</x>
+      <y>1572</y>
+      <w>360</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>IUnitOfWork&lt;T&gt;
+--
+MessageEF : IRepository&lt;ClassMessageEF&gt;
+--
+Commit()
+Dispose()
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>276</x>
+      <y>2184</y>
+      <w>444</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>UnitOfWork : IUnitOfWork
+--
+_dbContext : CSContext
+MessageRepository : Repository&lt;MessageEF&gt;
+--
+UnitOfWork(dbContext)
+Commit()
+Dispose()
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>252</x>
+      <y>168</y>
+      <w>456</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>SignalR
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1224</x>
+      <y>96</y>
+      <w>288</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>Objects
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2076</x>
+      <y>516</y>
+      <w>264</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+MessageType
+--
+Email = 0
+Notification = 1
+Chat = 2
+
+bg=#C4D7ED
+transparency=0
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>1044</y>
+      <w>252</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;public struct&gt;&gt;
+StructMessage
+--
++IdMessage : int
++IdSender : int
++IdReceiver : int
++MessageType : MessageType
++Title : string
++Email : string
++Date : DateTime
++Content : string
++IsSent : bool
+
+bg=#C4D7ED
+transparency=0
+layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>252</x>
+      <y>408</y>
+      <w>456</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes> : Controller
+--
+bg=#375D81
+transparency=0
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
