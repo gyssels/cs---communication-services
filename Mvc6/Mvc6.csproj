@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\cs - BusinessLogicLayer\cs - BusinessLogicLayer.csproj" />
+    <ProjectReference Include="..\cs - DataAccessLayer\cs - DataAccessLayer.csproj" />
+  </ItemGroup>
+
+
+
+</Project>

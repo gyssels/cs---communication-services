@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>cs___BusinessLogicLayer</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\cs - CrossCutting\cs - CrossCutting.csproj" />
+    <ProjectReference Include="..\cs - DataAccessLayer\cs - DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>
