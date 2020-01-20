@@ -7,13 +7,13 @@ namespace csBusinessLogicLayer.Interfaces
 {
 	public interface IUserInterfaceRole<T>
 	{
-		public List<int> GetHistory(int sender);
+		public IEnumerable<int> GetHistory(int sender);
 
-		public List<T> GetDiscussion(int sender, int receiver);
+		public IEnumerable<T> GetDiscussion(int sender, int receiver);
 
-		public void SendMessage(T message);
+		public bool SendMessage(T message);
 
-		public void SendMessage(T message, List<int> receivers);
+		public bool SendMessage(T message, List<int> receivers);
 	}
 
 }

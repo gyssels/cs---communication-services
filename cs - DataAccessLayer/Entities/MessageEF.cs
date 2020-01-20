@@ -17,6 +17,11 @@ namespace csDataAccessLayer.Entities
 		public bool IsSent { get; set; }
 		public string Content { get; set; }
 
+		public MessageEF()
+		{
+
+		}
+
 		public MessageEF(StructMessage message)
 		{
 			Id = message.Id;

@@ -4,7 +4,6 @@ using csDataAccessLayer.UnitOfWorks;
 using csBusinessLogicLayer.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using csBusinessLogicLayer.Interfaces;
 
 namespace csBusinessLogicLayer.UseCases
@@ -16,49 +15,51 @@ namespace csBusinessLogicLayer.UseCases
 
 		}
 
-		public List<int> GetHistory(int sender)
+		public IEnumerable<int> GetHistory(int sender)
 		{
 			UnitOfWork unitOfWork = new UnitOfWork(new CSContext());
 
-			List<int> receivers = unitOfWork.MessageRepository.GetHistory(sender);
+			IEnumerable<int> receivers = unitOfWork.MessageRepository.GetHistory(sender);
 			unitOfWork.Commit();
 			unitOfWork.Dispose();
 			return receivers;
 		}
 
-		public List<MessageTO> GetDiscussion(int sender, int receiver)
+		public IEnumerable<MessageTO> GetDiscussion(int sender, int receiver)
 		{
 			UnitOfWork unitOfWork = new UnitOfWork(new CSContext());
 
-			List<MessageTO> messages = unitOfWork.MessageRepository.Read(sender, receiver);
+			IEnumerable<MessageTO> messages = unitOfWork.MessageRepository.Read(sender, receiver);
 			unitOfWork.Commit();
 			unitOfWork.Dispose();
 			return messages;
 		}
 
-		public void SendMessage(MessageTO message)
+		public bool SendMessage(MessageTO message)
 		{
 			MessageDomain _message = message.ToDomain();
 
-			if (_message != null)
+			if (!_message.IsEmpty)
 				switch (_message.Message.MessageType)
 				{
 					case MessageType.chat:
-						_message.SendMessage();
-						break;
+						return _message.SendMessage();
 					case MessageType.email:
-						_message.SendMail();
-						break;
+						return _message.SendMail();
 				}
+			return false;
 		}
 
-		public void SendMessage(MessageTO message, List<int> receivers)
+		public bool SendMessage(MessageTO message, List<int> receivers)
 		{
+			if (message.ToDomain() == null)
+				return false;
 			foreach (int receiver in receivers)
 			{
 				message.Message.IdReceiver = receiver;
 				SendMessage(message);
 			}
+			return true;
 		}
 	}
 }
