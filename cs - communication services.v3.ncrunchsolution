@@ -1,0 +1,11 @@
+﻿<SolutionConfiguration>
+  <Settings>
+    <AllowParallelTestExecution>False</AllowParallelTestExecution>
+    <MetricsExclusionList>
+      <Value>cs - communication services\cs - communication services.csproj</Value>
+      <Value>Mvc6\Mvc6.csproj</Value>
+      <Value>cs - DataAccessLayer\cs - DataAccessLayer.csproj\Migrations</Value>
+    </MetricsExclusionList>
+    <SolutionConfigured>True</SolutionConfigured>
+  </Settings>
+</SolutionConfiguration>

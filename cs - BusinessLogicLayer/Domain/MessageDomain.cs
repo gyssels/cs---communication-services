@@ -1,42 +1,53 @@
-﻿using csCrossCutting;
-using System;
+﻿using System;
 
 namespace csBusinessLogicLayer.Domain
 {
-	public class MessageDomain
+	internal class MessageDomain : IDisposable
 	{
-		public StructMessage Message = new StructMessage();
+		internal StructMessage Message = new StructMessage();
 
-		public MessageDomain()
+		private bool _isEmpty;
+
+		public bool IsEmpty
 		{
-			Message.MessageType = MessageType.chat;
+			get
+			{
+				return _isEmpty;
+			}
 		}
 
-		public MessageDomain(StructMessage message)
+		internal MessageDomain(StructMessage message)
 		{
+			_isEmpty = false;
 			if (IsValid(message)) Message = message;
+			else Dispose();
 		}
 
-		public bool IsValid(StructMessage message)
+		public void Dispose()
+		{
+			_isEmpty = true;
+			GC.SuppressFinalize(this);
+		}
+
+		private bool IsValid(StructMessage message)
 		{
 			switch (message.MessageType)
 			{
 				case MessageType.chat:
 					if (message.IdReceiver == 0) return false;
-					if (message.Content == "") return false;
-					return true;
+					if (message.Content == null) return false;
+					break;
 				case MessageType.email:
-					if (message.Email == "") return false;
+					if (message.Email == null) return false;
 					// if regex email valid
-					if (message.Title == "") return false;
-					if (message.Content == "") return false;
-					return true;
+					if (message.Title == null) return false;
+					if (message.Content == null) return false;
+					break;
 				case MessageType.notification:
 					if (message.IdReceiver == 0) return false;
-					return true;
-				default:
-					return false;
+					break;
 			}
+			return true;
 		}
 	}
 }
